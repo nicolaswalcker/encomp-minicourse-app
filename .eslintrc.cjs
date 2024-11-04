@@ -24,7 +24,8 @@ module.exports = {
   ignorePatterns: [
     'node_modules/',
     'dist/',
-    'package.json'
+    'package.json',
+    'index.html'
   ],
   rules: {
   }
