@@ -1,24 +1,22 @@
+import getAll from './src/api/getAll'
+import { renderPets } from './src/utils/renderPets'
 import './styles.css'
-import javascriptLogo from './javascript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter'
 
-document.querySelector('#app').innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-      <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
-    </a>
-    <h1>Hello Vite!</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite logo to learn more
-    </p>
-  </div>
-`
+const startObserver = () => {
+  const observerElement = document.getElementById('pets')
+  const observer = new IntersectionObserver(async (entries, obs) => {
+    if (entries[0].isIntersecting) {
+      await getAll().then((pets) => {
+        console.log(pets)
+        renderPets(pets)
+      })
+      obs.disconnect()
+    }
+  })
 
-setupCounter(document.querySelector('#counter'))
+  observer.observe(observerElement)
+}
+
+window.onload = () => {
+  startObserver()
+}

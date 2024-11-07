@@ -1,13 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>catiorrinhos - UFES</title>
   </head>
   <body>
-    <div id="app"></div>
+    <dialog
+      id="modal"
+      class="modal modal-bottom sm:modal-middle z-50 bg-black/50"
+    >
+      <div id="modal-content"></div>
+    </dialog>
+    <header class="max-w-screen-xl mx-auto">
+      <nav class="navbar bg-base-100">
+        <div class="navbar-start">
+          <a class="btn btn-ghost text-xl">catiorrinhos</a>
+        </div>
+        <div class="navbar-end">
+          <a class="btn">Ver animais</a>
+        </div>
+      </nav>
+    </header>
+    <section
+      class="hero min-h-[calc(100vh-64px)]"
+      style="
+        background-image: url(https://images.pexels.com/photos/29214594/pexels-photo-29214594/free-photo-of-close-up-de-um-cao-jack-russell-terrier-ao-ar-livre.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+      "
+    >
+      <div class="hero-overlay bg-opacity-60"></div>
+      <div class="hero-content text-neutral-content text-center">
+        <div class="max-w-md">
+          <h1 class="mb-5 text-5xl font-bold">Olá, espero que aproveite</h1>
+          <p class="mb-5">
+            Muito obrigado por visitar o nosso site. Aqui você encontrará todos
+            os animais que temos na UFES. Esperamos que eles possam encontrar um
+            lar.
+          </p>
+          <a class="btn btn-primary">Ver animais</a>
+        </div>
+      </div>
+    </section>
+    <section
+      class="py-12 max-w-screen-xl mx-auto px-4 flex items-center flex-col-reverse lg:flex-row justify-between"
+    >
+      <div
+        class="max-w-xl class flex flex-col items-center mx-auto lg:mx-px lg:items-start gap-2"
+      >
+        <h2 class="text-3xl lg:text-4xl font-bold text-center lg:text-left">
+          Adote e torne a vida de alguém mais
+          <span class="text-primary">doce!</span>
+        </h2>
+        <p class="lg:text-lg text-center lg:text-left">
+          A adoção é um ato de amor e responsabilidade. Ao adotar, você se
+          compromete com um bichinho que dependerá sempre de você para cuidar
+          dele, dar afeto e um lar seguro. São mais de 30 milhões de animais
+          esperando um lar cheio de afeto, respeito e amor.
+        </p>
+        <button class="btn btn-primary">Quero adotar</button>
+      </div>
+      <div class="flex items-end justify-end mask mask-heart max-w-lg">
+        <img src="/assets/img/dog_2.jpeg" alt="" />
+      </div>
+    </section>
+    <section id="pets" class="max-w-screen-xl mx-auto px-4 flex flex-col gap-5">
+      <h2 class="text-3xl font-bold">
+        <span class="text-primary">catiorrinhos</span> disponíveis
+      </h2>
+      <div
+        id="pets-container"
+        class="grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] gap-6 pb-10"
+      ></div>
+    </section>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
