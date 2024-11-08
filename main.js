@@ -7,7 +7,6 @@ const startObserver = () => {
   const observer = new IntersectionObserver(async (entries, obs) => {
     if (entries[0].isIntersecting) {
       await getAll().then((pets) => {
-        console.log(pets)
         renderPets(pets)
       })
       obs.disconnect()

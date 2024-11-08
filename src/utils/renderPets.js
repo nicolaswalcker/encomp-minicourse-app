@@ -9,7 +9,7 @@ const formatDate = (date) => {
 
 const card = (pet) => {
   return `
-   <div class="card bg-base-100 w-full h-auto shadow-xl">
+   <div class="card bg-base-100 w-full h-auto shadow-xl border border-accent">
           <figure class="h-64">
             <img
               src="${pet.foto}"

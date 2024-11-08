@@ -6,7 +6,7 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: ['lemonade'],
+    themes: ['cupcake'],
   },
   plugins: [daisyui],
 }
